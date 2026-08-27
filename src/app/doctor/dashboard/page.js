@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/authOptions";
 import connectDB from "@/lib/db";
 import Doctor from "@/models/Doctor";
 import DoctorProfileCard from "@/components/DoctorProfileCard";
+import DoctorSlotManager from "@/components/DoctorSlotManager";
 
 export default async function DoctorDashboard() {
   const session = await getServerSession(authOptions);
@@ -24,6 +25,7 @@ export default async function DoctorDashboard() {
         specialty={doctor.specialty}
         city={doctor.city}
       />
+      <DoctorSlotManager />
     </div>
   );
 }
