@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { SPECIALTIES, CITIES } from "@/lib/constants";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -71,20 +72,18 @@ export default function SignupPage() {
 
         {role === "doctor" && (
           <>
-            <input
-              type="text"
-              placeholder="Specialty"
-              value={specialty}
-              onChange={(e) => setSpecialty(e.target.value)}
-              required
-            />
-            <input
-              type="text"
-              placeholder="City"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
-            />
+            <select value={specialty} onChange={(e) => setSpecialty(e.target.value)} required>
+              <option value="">Select specialty</option>
+              {SPECIALTIES.map((s) => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
+            <select value={city} onChange={(e) => setCity(e.target.value)} required>
+              <option value="">Select city</option>
+              {CITIES.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
           </>
         )}
 
