@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { SPECIALTIES } from "@/lib/constants";
 import HomeSearchBar from "@/components/HomeSearchBar";
+import SymptomTriage from "@/components/SymptomTriage";
+
 
 export default function HomePage() {
   return (
@@ -9,6 +11,7 @@ export default function HomePage() {
       <p>Book appointments with trusted doctors near you.</p>
 
       <HomeSearchBar />
+      <SymptomTriage />
 
       <h2>Browse by Specialty</h2>
       <div>

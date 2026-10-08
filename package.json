@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@google/genai": "^2.28.0",
     "bcrypt": "^6.0.0",
     "mongoose": "^9.9.2",
     "next": "16.3.1",
